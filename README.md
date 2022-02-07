@@ -6,4 +6,4 @@ Users can send messages, update username, change chatrooms, background color of 
 Language: HTML5, CSS3, JavaScript(ES6)
 Hosting: Firebase
 
-https://itbootcamp-chatroom-project.web.app/
+https://itbootcamp-chatroom-project.firebaseapp.com/
