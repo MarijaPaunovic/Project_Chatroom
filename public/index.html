@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9eb9930f57.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Chatroom</title>
+</head>
+
+<body>
+    <main class="container">
+        <header class="row">
+            <h1 class="col-12">ITBootcamp Chat</h1>
+        </header>
+
+        <div class="row">
+            <aside class="col-4">
+                <div class="menu">
+                    <!-- Choose a chatroom -->
+                    <h3 class="menu-title"><i class="fas fa-comments"></i> Choose a chatroom <i
+                            class="fas fa-caret-down"></i></h3>
+                    <ul id="choose-room" class="menu-dropdown">
+                        <li id="general" class="active"># general</li>
+                        <li id="js"># js</li>
+                        <li id="homework"># homework</li>
+                        <li id="tests"># tests</li>
+                    </ul>
+
+                    <div class="menu-forms-dropdown">
+                        <!-- Color form -->
+                        <form id="formColor">
+                            <input id="inputColor" type="color" name="color" value="#ffffff">
+                            <input id="btnColor" type="submit" value="Update color">
+                        </form>
+                        <!-- Date form -->
+                        <form id="formDate">
+                            <input id="inputDate-1" type="datetime-local" name="date-1">
+                            <input id="inputDate-2" type="datetime-local" name="date-2">
+                            <input id="btnDate" type="submit" value="Set dates">
+                        </form>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Messages -->
+            <div id="msgList" class="col-8 msg-list">
+                <ul id="list-tree">
+                    <!-- Messages goes here -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="row formDiv">
+            <div class="col-4 copyright">
+                <p>Copyright &copy; 2022<br>Marija Paunović</p>
+            </div>
+            <div class="col-8 form-list">
+                <div id="writeUserName"></div>
+                <!-- Message form -->
+                <form id="formMsg">
+                    <textarea id="inputMsg" name="msg" placeholder="Your message..." rows="1" cols="1"></textarea>
+                    <input id="btnSend" type="submit" value="Send">
+                </form>
+                <!-- Username form -->
+                <form id="formUser">
+                    <input id="btnUpdate" type="submit" value="Update">
+                    <input id="inputUsername" type="text" name="username" placeholder="Update username">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAmB0NYJyQxGGA05HtmhoGIJk4RVY-spS8",
+            authDomain: "itbootcamp-chatroom-project.firebaseapp.com",
+            projectId: "itbootcamp-chatroom-project",
+            storageBucket: "itbootcamp-chatroom-project.appspot.com",
+            messagingSenderId: "372206457273",
+            appId: "1:372206457273:web:a3b30f3bccdbc7c63e2668",
+            measurementId: "G-KH6084KNHM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore();
+    </script>
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

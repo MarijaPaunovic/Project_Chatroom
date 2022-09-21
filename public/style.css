@@ -1,0 +1,363 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+:root {
+    --main-color: purple;
+    --secondary-color: #d8b2ff;
+    --third-color: #d8d7d7;
+    --four-color: #fadfac;
+    --fifth-color: rgb(126, 125, 125);
+    --white-color: white;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+}
+body {
+    margin: 0 auto;
+    text-align: center;
+    background: var(--secondary-color);
+    font: 14px/20px "Lato", Arial, sans-serif;
+    margin-top: 10px;
+    height: calc(100vh - 25px);
+}
+.container {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 10px auto;
+    background: var(--white-color);
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+}
+
+/* --- Header --- */
+header {
+    height: 10%;
+    background: var(--main-color);
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+h1 {
+    font-size: 2rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* --- Aside - chatrooms --- */
+aside {
+    text-align: center;
+    padding-right: 10px;
+}
+aside h3 {
+    background: var(--main-color);
+    color: var(--white-color);
+    font-size: 1.6em;
+    padding: 10px;
+    height: 50px;
+}
+.fa-comments {
+    font-size: 1.5rem;
+    margin-right: 10%;
+    color: var(--white-color);
+}
+.fa-caret-down {
+    margin-left: 10%;
+    color: var(--white-color);
+}
+aside ul {
+    margin-bottom: 20px;
+}
+aside ul li {
+    display: block;
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid var(--main-color);
+    background: var(--secondary-color);
+    color: var(--main-color);
+    cursor: pointer;
+}
+aside ul li:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+.active {
+    font-weight: bold;
+    background: var(--four-color);
+    color: var(--main-color);
+    cursor: pointer;
+}
+input[type="color"] {
+    width: 80%;
+    height: 25px;
+    border: var(--secondary-color);
+}
+input[type="submit"] {
+    width: 80%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background: var(--main-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    height: 35px;
+    text-transform: uppercase;
+    background: var(--main-color);
+    transform: translateY(-0.1em);
+    -webkit-box-shadow: 2px 1px 3px 1px rgba(0,0,0,0.5); 
+    box-shadow: 2px 1px 3px 1px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+input[type="datetime-local"] {
+    width: 80%;
+    height: 25px;
+    margin: 10px 0;
+}
+#formDate {
+    margin-bottom: 10px;
+}
+
+/* --- Messages --- */
+.msg-list {
+    padding: 10px;
+    width: 100%;
+    height: calc(100vh - 250px);
+    border: 1px solid var(--secondary-color);
+}
+.msg-list ul {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.msg-list ul li{
+    width: 60%;
+    position: relative;
+    float: right;
+    text-align: right;
+    line-height: 1rem;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 0px 15px 15px 15px;
+    color: var(--main-color);
+    background: var(--secondary-color);
+}
+.left-align {
+    width: 60%;
+    position: relative;
+    float: left;
+    text-align: left;
+    line-height: 1rem;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 0px 15px 15px 15px;
+    color: var(--main-color);
+    background: var(--secondary-color);
+}
+.right-align {
+    width: 60%;
+    position: relative;
+    float: right;
+    text-align: right;
+    line-height: 1rem;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px 15px 0 15px;
+    color: var(--main-color);
+    background: var(--four-color);
+}
+.left-icon {
+    display: block;
+    text-align: left;
+    color: var(--fifth-color);
+    font-size: 1em;
+    cursor: pointer;
+}
+.right-icon {
+    display: block;
+    text-align: right;
+    color: var(--fifth-color);
+    font-size: 1em;
+    cursor: pointer;
+}
+.user {
+    font-weight: bolder;
+}
+.date {
+    color: var(--fifth-color);
+    font-size: 0.7em;
+}
+
+/* --- Forms --- */
+.copyright {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--secondary-color);
+}
+#writeUserName {
+    color: var(--main-color);
+    background: var(--secondary-color);
+    text-align: center;
+}
+textarea {
+    padding: 3px;
+    margin-top: 10px;
+    margin-left: 1%;
+    float: left;
+    width: 65%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+}
+#btnSend {
+    margin-top: 10px;
+    margin-right: 2%;
+    float: right;
+    width: 30%;
+    height: 25px;
+    border-radius: 5px;
+}
+#btnUpdate {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 1%;
+    float: left;
+    width: 30%;
+    height: 25px;
+    border-radius: 5px;
+}
+#inputUsername {
+    margin-top: 10px;
+    margin-right: 2%;
+    padding-left: 5px;
+    float: right;
+    width: 65%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+}
+
+/* --- Placeholder --- */
+#inputMsg:focus:-webkit-placeholder {
+    color: transparent;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--third-color);
+    opacity: 1; /* Firefox */
+}
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--third-color);
+}
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--third-color);
+}
+
+/* FOR MOBILE DEVICES */
+@media only screen and (max-width: 749px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+    body {
+        margin: 0;
+        height: 100vh;
+    }
+    .container {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    aside {
+        padding: 0;
+    }
+    aside h3 {
+        font-size: 1.4em;
+    }
+    .menu {
+        width: 100%;
+    }
+    .menu-dropdown, .menu-forms-dropdown {
+        display: none;
+    }
+    .menu-title:hover {
+        cursor: pointer;
+    }
+    .menu:hover > .menu-dropdown {
+        display: block;
+    }
+    .menu:hover > .menu-forms-dropdown {
+        display: block;
+    }
+    .copyright {
+        display: none;
+    }
+}
+
+/* FOR TABLET DEVICES */
+@media only screen and (min-width: 750px) and (max-width: 1050px) {
+    aside h3 {
+        font-size: 1em;
+    }
+}
+
+/* FOR DESKTOP DEVICES */
+@media only screen and (min-width: 750px) {
+    .col-1 {
+        width: 8.33%;
+      }
+      .col-2 {
+        width: 16.66%;
+      }
+      .col-3 {
+        width: 25%;
+      }
+      .col-4 {
+        width: 33.33%;
+      }
+      .col-5 {
+        width: 41.66%;
+      }
+      .col-6 {
+        width: 50%;
+      }
+      .col-7 {
+        width: 58.33%;
+      }
+      .col-8 {
+        width: 66.66%;
+      }
+      .col-9 {
+        width: 75%;
+      }
+      .col-10 {
+        width: 83.33%;
+      }
+      .col-11 {
+        width: 91.66%;
+      }
+      .col-12 {
+        width: 100%;
+      }
+}
